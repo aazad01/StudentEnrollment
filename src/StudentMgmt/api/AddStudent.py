@@ -2,6 +2,8 @@ import requests
 import json
 import datetime, time
 
+from StudentMgmt import Environment
+
 END_POINT = "addStudent"
 
 def add_student(id: int, first_name: str, last_name: str, nationality: str, student_class: str):
@@ -13,4 +15,6 @@ def add_student(id: int, first_name: str, last_name: str, nationality: str, stud
         "studentClass": student_class
     }
 
-    request = requests.post(Environment.base_url + END_POINT)
+    response = requests.post(Environment.BASE_URL + END_POINT)
+    r = response.json()
+    print(r)

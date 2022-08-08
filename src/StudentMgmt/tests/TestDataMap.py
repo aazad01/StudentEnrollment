@@ -1,7 +1,7 @@
 import enum
 
 from StudentMgmt.Student import Student
-from StudentMgmt.helper import Randoms
+from helper import Randoms
 
 
 class TestData(enum.Enum):

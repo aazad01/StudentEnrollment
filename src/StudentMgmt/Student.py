@@ -1,6 +1,6 @@
 from faker import Faker
 
-from StudentMgmt.helper import Randoms
+from helper import Randoms
 
 
 class Student:

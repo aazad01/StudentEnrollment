@@ -1,6 +1,6 @@
 import requests
 
-import Environment
+import environment
 
 
 def delete_student(id: int):
@@ -8,7 +8,7 @@ def delete_student(id: int):
         "id": id
     }
     headers = {'Content-Type': 'application/json'}
-    response = requests.delete(url=Environment.BASE_URL + Environment.DELETE_END_POINT, json=param, headers=headers)
+    response = requests.delete(url=environment.BASE_URL + environment.DELETE_END_POINT, json=param, headers=headers)
     r = response
     print(r)
     return response

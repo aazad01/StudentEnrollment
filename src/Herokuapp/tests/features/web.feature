@@ -21,8 +21,10 @@ Feature: Test Login Page
     And you can login
     And you get an error: <error>
 
+
     Examples:
       | user     | error            |
       | Username | Invalid Username |
       | Password | Invalid Password |
       | Random   | Invalid Username |
+

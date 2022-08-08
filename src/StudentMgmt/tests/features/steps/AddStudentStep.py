@@ -2,7 +2,7 @@ import random
 
 from behave import *
 
-import Environment
+import environment
 from StudentMgmt.api import AddStudent
 from StudentMgmt.tests.TestDataMap import TestData
 
@@ -17,7 +17,7 @@ def step_impl(context, student):
     """
     print(context.student.get_last_name())
     if TestData.value_of(student).value[1]:
-        context.student.set_id(Environment.get_max_student_id_num() + 1)
+        context.student.set_id(environment.get_max_student_id_num() + 1)
     else:
         context.student.set_id(random.choice(list(map(lambda c: c.get('id'), context.school))))
     context.response = AddStudent.add_student(context.student)
@@ -42,7 +42,7 @@ def step_impl(context, data):
     td = TestData.value_of(data)
     context.student = td.value[1]
     if td != TestData.MISSING_ID:
-        context.student.set_id(Environment.get_max_student_id_num() + 1)
+        context.student.set_id(environment.get_max_student_id_num() + 1)
     print(td.value[0])
 
 

@@ -79,3 +79,13 @@ Feature: Test Api Endpoints
     Examples: Student
       | student       | success      |
       | Valid Student | successfully |
+
+  Scenario Outline: Fetch all students in class
+    Given create a <student>
+    When I try to add a <student>
+    Then a student is <success> added
+    And students exists
+
+    Examples: Student
+      | student       | success      |
+      | Valid Student | successfully |

@@ -1,6 +1,6 @@
 import requests
 
-import Environment
+import environment
 
 
 def fetch_student(id: int, student_class: str):
@@ -8,7 +8,7 @@ def fetch_student(id: int, student_class: str):
         "id": id,
         "studentClass": student_class
     }
-    response = requests.get(url=Environment.BASE_URL + Environment.FETCH_END_POINT, params=params)
+    response = requests.get(url=environment.BASE_URL + environment.FETCH_END_POINT, params=params)
     r = response.json()
     print(r)
     return response

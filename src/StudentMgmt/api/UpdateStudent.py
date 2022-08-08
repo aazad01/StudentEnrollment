@@ -1,6 +1,6 @@
 import requests
 
-import Environment
+import environment
 from StudentMgmt import Student
 
 
@@ -14,7 +14,7 @@ def update_student_detail(id: int, first_name: str, last_name: str, nationality:
     }
     print(f"payload: {payload}")
     headers = {'Content-Type': 'application/json'}
-    response = requests.put(url=Environment.BASE_URL + Environment.UPDATE_END_POINT, json=payload, headers=headers)
+    response = requests.put(url=environment.BASE_URL + environment.UPDATE_END_POINT, json=payload, headers=headers)
     print(f"response: {response.text}")
     return response
 

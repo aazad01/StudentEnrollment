@@ -12,6 +12,3 @@ num = 0
 
 def get_max_student_id_num():
     return num
-
-
-WEB_UI = "https://the-internet.herokuapp.com/login"

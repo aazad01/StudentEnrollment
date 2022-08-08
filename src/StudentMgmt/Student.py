@@ -1,7 +1,5 @@
 from faker import Faker
 
-from helper import Randoms
-
 
 class Student:
 
@@ -11,7 +9,7 @@ class Student:
         self.last_name = fake.last_name()
         self.nationality = fake.country()
         self.id = None
-        self.student_class = Randoms.random_string(10)
+        self.student_class = 'K101'
 
     def set_first_name(self, value):
         self.first_name = value

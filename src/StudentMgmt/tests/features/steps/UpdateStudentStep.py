@@ -1,9 +1,10 @@
 from behave import *
 
-import Environment
+import environment
 from StudentMgmt.Student import Student
 from StudentMgmt.api import UpdateStudent
 from StudentMgmt.tests.TestDataMap import TestData
+from helper import Randoms
 
 use_step_matcher("re")
 
@@ -17,7 +18,7 @@ def step_impl(context, field):
     td = TestData.value_of(field)
     student = context.student
     original_val = ""
-    new_num = Environment.get_max_student_id_num() + 2
+    new_num = environment.get_max_student_id_num() + 2
     if td == TestData.ID:
         original_val = student.get_id()
         student.set_id(new_num)
@@ -29,7 +30,7 @@ def step_impl(context, field):
         student.set_last_name(Student().get_last_name())
     elif td == TestData.STUDENT_CLASS:
         original_val = student.get_student_class()
-        student.set_student_class(Student().get_student_class())
+        student.set_student_class(Randoms.random_string(10))
     elif td == TestData.NATIONALITY:
         original_val = student.get_nationality()
         student.set_nationality(Student().get_nationality())

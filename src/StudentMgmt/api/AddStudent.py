@@ -1,6 +1,6 @@
 import requests
 
-import Environment
+import environment
 from StudentMgmt import Student
 
 
@@ -13,7 +13,7 @@ def add_student_detail(id, first_name, last_name, nationality, student_class):
         "studentClass": student_class
     }
     headers = {'Content-Type': 'application/json'}
-    response = requests.post(Environment.BASE_URL + Environment.ADD_END_POINT, json=payload, headers=headers)
+    response = requests.post(environment.BASE_URL + environment.ADD_END_POINT, json=payload, headers=headers)
     print(response.text)
     return response
 

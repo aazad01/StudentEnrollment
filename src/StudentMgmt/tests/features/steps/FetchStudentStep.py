@@ -29,3 +29,13 @@ def step_impl(context):
     student = context.student
     response = FetchStudent.fetch_student(student.get_id(), student.get_student_class())
     assert len(response.json()) == 0
+
+
+@step("students exists")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    student = context.student
+    response = FetchStudent.fetch_student(None, student.get_student_class())
+    assert len(response.json()) > 0

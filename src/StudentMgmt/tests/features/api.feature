@@ -18,12 +18,12 @@ Feature: Test Api Endpoints
   Scenario Outline: Adding an invalid student
     Given missing <data>
     When I try to add the student
-    Then a student should not be added
+    Then a student should not be added with <response_code>
 
     Examples: Missing data
-      | data                |
-      | Missing Id          |
-      | Missing First Name  |
-      | Missing Last Name   |
-      | Missing Class       |
-      | Missing Nationality |
+      | data                | response_code |
+      | Missing Id          | 400           |
+      | Missing First Name  | 500           |
+      | Missing Last Name   | 400           |
+      | Missing Class       | 500           |
+      | Missing Nationality | 400           |

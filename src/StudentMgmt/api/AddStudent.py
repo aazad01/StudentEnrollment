@@ -4,7 +4,8 @@ from StudentMgmt import Environment, Student
 
 
 class AddStudent:
-    def add_student_detail(self, id, first_name, last_name, nationality, student_class):
+    @staticmethod
+    def add_student_detail(id, first_name, last_name, nationality, student_class):
         payload = {
             "firstName": first_name,
             "id": id,

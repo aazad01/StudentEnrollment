@@ -15,5 +15,5 @@ class TestData(enum.Enum):
     MISSING_NATIONALITY = "Missing Nationality", Student().set_nationality(None)
 
     @classmethod
-    def valueOf(cls, value):
+    def value_of(cls, value):
         return list(filter(lambda x: x.value[0] == value, TestData))[0]

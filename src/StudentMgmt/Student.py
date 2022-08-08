@@ -1,7 +1,6 @@
-import random
-import string
-
 from faker import Faker
+
+from StudentMgmt.helper import Randoms
 
 
 class Student:
@@ -12,8 +11,7 @@ class Student:
         self.last_name = fake.last_name()
         self.nationality = fake.country()
         self.id = None
-        letters = string.ascii_lowercase
-        self.student_class = ''.join(random.choice(letters) for i in range(10))
+        self.student_class = Randoms.random_string(10)
 
     def set_first_name(self, value):
         self.first_name = value

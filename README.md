@@ -1,3 +1,7 @@
+<h1>Instructions</h1>
+<code>pip install -r requirements</code>
+
+
 <h1>Total of 27 tests</h1>
 <b>2 Failures</b>
 - 1. Allowed to add a student without a last name

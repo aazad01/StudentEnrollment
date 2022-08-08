@@ -34,9 +34,11 @@ def step_impl(context, data):
     :type context: behave.runner.Context
     :type data: str
     """
-    if TestData.valueOf(data) != TestData.MISSING_ID:
+    td = TestData.valueOf(data)
+    context.student = td.value[1]
+    if td != TestData.MISSING_ID:
         context.student.set_id(len(context.school))
-    context.student = TestData.valueOf(data)
+    print(td.value[0])
 
 
 @when("I try to add the student")
@@ -47,9 +49,9 @@ def step_impl(context):
     context.response = add_api.add_student(context.student)
 
 
-@then("a student should not be added")
+@then("fail with")
 def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert context.response.status_code == 500
+    raise NotImplementedError(u'STEP: Then fail with')

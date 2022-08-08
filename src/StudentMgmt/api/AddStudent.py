@@ -21,4 +21,4 @@ class AddStudent:
     def add_student(self, student: Student):
         return self.add_student_detail(student.get_id(), student.get_first_name(), student.get_last_name(),
                                        student.get_nationality(),
-                                       "K001")
+                                       student.get_student_class())

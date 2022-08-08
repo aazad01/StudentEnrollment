@@ -26,7 +26,7 @@ class Student:
         return self.last_name
 
     def set_nationality(self, value):
-        self.first_name = value
+        self.nationality = value
         return self
 
     def get_nationality(self):

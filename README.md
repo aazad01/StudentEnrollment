@@ -1,5 +1,5 @@
 <h1>Instructions</h1>
-<code>pip install -r requirements</code>
+<code>pip install -r requirements.txt</code>
 
 
 <h1>Total of 27 tests</h1>

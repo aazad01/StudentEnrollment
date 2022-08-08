@@ -24,4 +24,3 @@ class TestData(enum.Enum):
     @classmethod
     def value_of(cls, value):
         return list(filter(lambda x: x.value[0] == value, TestData))[0]
-

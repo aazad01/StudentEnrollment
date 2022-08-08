@@ -2,7 +2,7 @@ import random
 
 from behave import *
 
-from StudentMgmt import Environment
+import Environment
 from StudentMgmt.api import AddStudent
 from StudentMgmt.tests.TestDataMap import TestData
 

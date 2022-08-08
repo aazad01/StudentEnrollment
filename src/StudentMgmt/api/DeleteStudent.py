@@ -1,6 +1,6 @@
 import requests
 
-from StudentMgmt import Environment
+import Environment
 
 
 def delete_student(id: int):

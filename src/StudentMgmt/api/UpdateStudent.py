@@ -1,6 +1,7 @@
 import requests
 
-from StudentMgmt import Environment, Student
+import Environment
+from StudentMgmt import Student
 
 
 def update_student_detail(id: int, first_name: str, last_name: str, nationality: str, student_class: str):

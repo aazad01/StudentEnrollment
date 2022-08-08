@@ -1,7 +1,7 @@
 import requests
 from behave import *
 
-from StudentMgmt import Environment
+import Environment
 from StudentMgmt.Student import Student
 
 

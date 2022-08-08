@@ -16,17 +16,23 @@ Feature: Test Api Endpoints
 
 
   Scenario Outline: Adding an invalid student
-    Given missing <data>
+    Given invalid <data>
     When I try to add the student
     Then a student should not be added with status code <response_code>
 
-    Examples: Missing data
-      | data                | response_code |
-      | Missing Id          | 400           |
-      | Missing First Name  | 500           |
-      | Missing Last Name   | 400           |
-      | Missing Class       | 500           |
-      | Missing Nationality | 400           |
+    Examples: Invalid Data
+      | data                      | response_code |
+      | Missing Id                | 400           |
+      | Missing First Name        | 500           |
+      | Missing Last Name         | 400           |
+      | Missing Class             | 500           |
+      | Missing Nationality       | 400           |
+      | Max Character First Name  | 500           |
+      | Max Character Last Name   | 500           |
+      | Max Character Class       | 500           |
+      | Max Character Nationality | 500           |
+#      | SQL INJECT                | 500           |
+
 
   Scenario Outline: Duplicate a student entry and update
     Given create a <student>

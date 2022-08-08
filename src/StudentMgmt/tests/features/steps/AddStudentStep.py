@@ -33,7 +33,7 @@ def step_impl(context, success):
     assert context.response.status_code == (200 if TestData.value_of(success).value[1] else 500)
 
 
-@given("missing (?P<data>.+)")
+@given("invalid (?P<data>.+)")
 def step_impl(context, data):
     """
     :type context: behave.runner.Context

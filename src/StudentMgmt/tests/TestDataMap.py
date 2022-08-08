@@ -1,6 +1,7 @@
 import enum
 
 from StudentMgmt.Student import Student
+from StudentMgmt.helper import Randoms
 
 
 class TestData(enum.Enum):
@@ -14,6 +15,12 @@ class TestData(enum.Enum):
     MISSING_LAST_NAME = "Missing Last Name", Student().set_last_name(None),
     MISSING_CLASS_NAME = "Missing Class", Student().set_student_class(None),
     MISSING_NATIONALITY = "Missing Nationality", Student().set_nationality(None)
+
+    MAX_CHAR_FIRST_NAME = "Max Character First Name", Student().set_first_name(Randoms.random_string(300)),
+    MAX_CHAR_LAST_NAME = "Max Character Last Name", Student().set_last_name(Randoms.random_string(300)),
+    MAX_CHAR_CLASS_NAME = "Max Character Class", Student().set_student_class(Randoms.random_string(300)),
+    MAX_CHAR_NATIONALITY = "Max Character Nationality", Student().set_nationality(Randoms.random_string(300))
+    SQL_INJECT = "SQL INJECT", Student().set_first_name(";Select * FROM all_tables")
 
     ID = "ID", True,
     FIRST_NAME = "First Name", True,

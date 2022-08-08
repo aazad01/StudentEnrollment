@@ -9,6 +9,6 @@ def fetch_student(id: int, student_class: str):
         "studentClass": student_class
     }
     response = requests.get(url=Environment.BASE_URL + Environment.FETCH_END_POINT, params=params)
-    r = response
+    r = response.json()
     print(r)
-    return r
+    return response

@@ -1,3 +1,6 @@
+import random
+import string
+
 from faker import Faker
 
 
@@ -8,8 +11,9 @@ class Student:
         self.first_name = fake.first_name()
         self.last_name = fake.last_name()
         self.nationality = fake.country()
-        self.id = 0
-        self.student_class = "K001"
+        self.id = None
+        letters = string.ascii_lowercase
+        self.student_class = ''.join(random.choice(letters) for i in range(10))
 
     def set_first_name(self, value):
         self.first_name = value

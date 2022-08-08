@@ -8,12 +8,20 @@ class TestData(enum.Enum):
     INVALID_STUDENT = "Invalid Student", False,
     SUCCESSFULLY = "successfully", True,
     UNSUCCESSFULLY = "unsuccessfully", False,
+
     MISSING_ID = "Missing Id", Student().set_id(None),
     MISSING_FIRST_NAME = "Missing First Name", Student().set_first_name(None),
     MISSING_LAST_NAME = "Missing Last Name", Student().set_last_name(None),
     MISSING_CLASS_NAME = "Missing Class", Student().set_student_class(None),
     MISSING_NATIONALITY = "Missing Nationality", Student().set_nationality(None)
 
+    ID = "ID", True,
+    FIRST_NAME = "First Name", True,
+    LAST_NAME = "Last Name", True,
+    NATIONALITY = "Nationality", True,
+    STUDENT_CLASS = "Student Class", True,
+
     @classmethod
     def value_of(cls, value):
         return list(filter(lambda x: x.value[0] == value, TestData))[0]
+

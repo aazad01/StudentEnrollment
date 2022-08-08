@@ -14,6 +14,7 @@ def step_impl(context):
         else:
             print("localhost server is up and running")
             context.school = response.json()
+            Environment.num = max(list(map(lambda c: c.get('id'), context.school)))
     except Exception:
         raise ConnectionError("Server isn't up")
 
